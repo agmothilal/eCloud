@@ -1,0 +1,32 @@
+﻿<Window x:Class="Home.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" 
+        Title="App name" 
+        WindowState="Maximized"
+        Height="{Binding SystemParameters.PrimaryScreenHeight}" 
+        Width="{Binding SystemParameters.PrimaryScreenWidth}"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <Grid>
+        <DockPanel>
+            <Menu Height="24"
+                  HorizontalAlignment="Stretch"
+                  VerticalAlignment="Top"
+                  VerticalContentAlignment="Center"
+                  HorizontalContentAlignment="Center"
+                  DockPanel.Dock="Top">
+                <MenuItem Header="_Main">
+                    <MenuItem Header="_Employees" Command="{Binding NavigateToEmployeesCommand, Mode=OneWay}"/>
+                    <MenuItem Header="_Products" Command="{Binding NavigateToProductsCommand, Mode=OneWay}"/>
+                </MenuItem>
+            </Menu>
+
+            <Frame x:Name="MainFrame" 
+                   VerticalAlignment="Stretch" 
+                   HorizontalAlignment="Stretch" 
+                   NavigationUIVisibility="Hidden"/>
+        </DockPanel>
+    </Grid>
+</Window>

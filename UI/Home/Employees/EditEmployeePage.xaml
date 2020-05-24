@@ -1,0 +1,105 @@
+﻿<Page x:Class="Home.Employees.EditEmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Home.Employees"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Edit Employee"
+      DataContext="{Binding EmployeesViewModel, Source={StaticResource Locator}}">
+    <Grid VerticalAlignment="Top"
+          HorizontalAlignment="Center">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Firstname"
+               Grid.Column="0"
+               Grid.Row="0"
+               Width="120"
+               Height="25"
+               Margin="5,3,10,3"/>
+        <Label Content="Lastname"
+               Grid.Column="0"
+               Grid.Row="1"
+               Width="120"
+               Height="25"
+               Margin="5,3,10,3"/>
+        <Label Content="Address"
+               Grid.Column="0"
+               Grid.Row="2"
+               Width="120"
+               Height="25"
+               Margin="5,3,10,3"/>
+        <Label Content="Email"
+               Grid.Column="0"
+               Grid.Row="3"
+               Width="120"
+               Height="25"
+               Margin="5,3,10,3"/>
+        <Label Content="Mobile"
+               Grid.Column="0"
+               Grid.Row="4"
+               Width="120"
+               Height="25"
+               Margin="5,3,10,3"/>
+
+        <TextBox Text="{Binding Employee.Firstname}"
+                 Grid.Column="1"
+                 Grid.Row="0"
+                 Width="Auto"
+                 Height="22"
+                 Margin="5,3,10,3"/>
+        <TextBox Text="{Binding Employee.Lastname}"
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 Width="Auto"
+                 Height="22"
+                 Margin="5,3,10,3"/>
+        <TextBox Text="{Binding Employee.Address}"
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 Width="Auto"
+                 Height="22"
+                 Margin="5,3,10,3"/>
+        <TextBox Text="{Binding Employee.EMailId}"
+                 Grid.Column="1"
+                 Grid.Row="3"
+                 Width="Auto"
+                 Height="22"
+                 Margin="5,3,10,3"/>
+        <TextBox Text="{Binding Employee.MobileNumber}"
+                 Grid.Column="1"
+                 Grid.Row="4"
+                 Width="Auto"
+                 Height="22"
+                 Margin="5,3,10,3"/>
+
+        <DockPanel Grid.Column="0"
+                   Grid.Row="5"
+                   Grid.ColumnSpan="2"
+                   Width="Auto">
+
+            <Button Content="Cancel" 
+                    DockPanel.Dock="Right"
+                    Height="25"
+                    Width="80"
+                    Command="{Binding UpdateEmployeeCommand}"/>
+            <Button Content="Update" 
+                    DockPanel.Dock="Right"
+                    Height="25"
+                    Width="80"
+                    Command="{Binding NavigateToEmployeesCommand}"/>
+        </DockPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\SqlDbContext\SqlDbContext.csproj" />
+    <ProjectReference Include="..\Code.Model.Abstract\Code.Model.Abstract.csproj" />
+    <ProjectReference Include="..\Core.Model\Core.Model.csproj" />
+  </ItemGroup>
+
+</Project>

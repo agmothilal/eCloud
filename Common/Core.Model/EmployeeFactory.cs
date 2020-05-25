@@ -8,5 +8,10 @@ namespace Core.Model
         {
             return new Employee { Id = id, Firstname = firstname, Lastname = lastname, Address = address, EMailId = emailId, MobileNumber = mobileNumber };
         }
+
+        public IEmployee Create()
+        {
+            return new Employee();
+        }
     }
 }

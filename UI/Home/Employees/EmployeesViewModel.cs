@@ -2,12 +2,8 @@
 using EmployeePortfolio;
 using Home.CommandHelper;
 using Home.NavigationHelper;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Windows.Input;
 
 namespace Home.Employees
@@ -50,20 +46,28 @@ namespace Home.Employees
 
         private void NavigateToEditEmployee(IEmployee employee)
         {
-            Employee = employee;
+            Employee = employee ?? _employeePortfolio.CrateEmptyEmployee();
             _navigationService.NavigateTo("EditEmployee");
         }
 
         private void UpdateEmployee()
         {
-            _employeePortfolio.Update(Employee);
+            if (Employee.Id == 0)
+            {
+                var employee = _employeePortfolio.Add(Employee);
+                AllEmployees.Add(employee);
+            }
+            else
+            {
+                _employeePortfolio.Update(Employee);
+            }
             _navigationService.NavigateTo("Employees");
         }
 
         private void DeletEmployee(IEmployee employee)
         {
             _employeePortfolio.Delete(employee);
-            InitiateEmployees(_employeePortfolio.Employees);
+            AllEmployees.Remove(employee);
         }
     }
 }

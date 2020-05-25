@@ -3,5 +3,6 @@
     public interface IEmployeeFactory
     {
         IEmployee Create(int id, string firstname, string lastname, string address, string emailId, string mobileNumber);
+        IEmployee Create();
     }
 }

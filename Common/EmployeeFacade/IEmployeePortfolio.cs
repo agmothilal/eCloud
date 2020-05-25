@@ -6,7 +6,8 @@ namespace EmployeePortfolio
     public interface IEmployeePortfolio
     {
         IEnumerable<IEmployee> Employees { get; }
-        void Add(int id, string firstname, string lastname, string address, string emailId, string mobileNumber);
+        IEmployee CrateEmptyEmployee();
+        IEmployee Add(IEmployee employee);
         void Update(IEmployee employee);
         bool Delete(IEmployee employee);
     }

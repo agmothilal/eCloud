@@ -94,12 +94,12 @@
                     DockPanel.Dock="Right"
                     Height="25"
                     Width="80"
-                    Command="{Binding UpdateEmployeeCommand}"/>
-            <Button Content="Update" 
+                    Command="{Binding NavigateToEmployeesCommand}"/>
+            <Button Content="Save" 
                     DockPanel.Dock="Right"
                     Height="25"
                     Width="80"
-                    Command="{Binding NavigateToEmployeesCommand}"/>
+                    Command="{Binding UpdateEmployeeCommand}"/>
         </DockPanel>
     </Grid>
 </Page>

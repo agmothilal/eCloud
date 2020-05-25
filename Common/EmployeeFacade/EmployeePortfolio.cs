@@ -18,10 +18,16 @@ namespace EmployeePortfolio
             _employeeFactory = employeeFactory;
         }
 
-        public void Add(int id, string firstname, string lastname, string address, string emailId, string mobileNumber)
+        public IEmployee CrateEmptyEmployee()
         {
-            var employee = _employeeFactory.Create(id, firstname, lastname, address, emailId, mobileNumber);
+            return _employeeFactory.Create();
+        }
+
+        public IEmployee Add(IEmployee employee)
+        {
+            employee.Id = _sqlData.Employees.Max(x => x.Id) + 1;
             _sqlData.Employees.Add(employee);
+            return employee;
         }
 
         public void Update(IEmployee employee)

@@ -8,6 +8,18 @@
       Title="Employees"
       DataContext="{Binding EmployeesViewModel, Source={StaticResource Locator}}">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Add Employee" 
+                Height="22"
+                Width="200"
+                Margin="0,0,225,0"
+                Grid.Row="0"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Command="{Binding NavigateToEditEmployeeCommand}"/>
         <DataGrid HorizontalAlignment="Center"
                   VerticalAlignment="Top"
                   Height="Auto"
@@ -20,7 +32,8 @@
                   CanUserResizeColumns="False"
                   CanUserReorderColumns="False"
                   CanUserSortColumns="False"
-                  IsReadOnly="True">
+                  IsReadOnly="True"
+                  Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id"
                                     Binding="{Binding Id}"
